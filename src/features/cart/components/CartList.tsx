@@ -5,8 +5,7 @@ import SVG from '../../../assets/preview.svg'
 import {CartItem as CartItemType} from '../../../data/types'
 import {useDispatch} from "react-redux";
 import {removeCartItem} from "../context/CartActions";
-import {Navigate, redirect, useNavigate} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
 
 
 type CartListProps = {

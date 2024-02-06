@@ -1,14 +1,10 @@
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import {useFormik} from "formik";
-import {signUp} from "../../authentication/context/SignupActions";
-import {dispatch} from "jest-circus/build/state";
 import {sendOrderData} from "../context/CartActions";
 import {useDispatch, useSelector} from "react-redux";
-import {IRootState, User} from "../../../data/types";
-import {state} from "sucrase/dist/types/parser/traverser/base";
+import {IRootState} from "../../../data/types";
 import {CartItems} from "../data/types";
-import Cart from "../../../pages/Cart";
 import {useNavigate} from "react-router-dom";
 
 
@@ -52,8 +48,8 @@ const validate = (values : ValuesType) => {
 const CheckoutForm = () => {
     const cartItems = useSelector<IRootState, CartItems>(state => state.Cart.items);
     const dispatch = useDispatch();
-    const loading = useSelector<IRootState, boolean>(state => state.Cart.isLoading);
-    const error = useSelector<IRootState>(state => state.Cart.errorMessage);
+    // const loading = useSelector<IRootState, boolean>(state => state.Cart.isLoading);
+    // const error = useSelector<IRootState>(state => state.Cart.errorMessage);
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {

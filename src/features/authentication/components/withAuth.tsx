@@ -1,9 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {IRootState} from "../../../data/types";
-import {ComponentType, FC, useEffect} from "react";
+import {ComponentType, useEffect} from "react";
 import {verifyUser} from "../context/LoginActions";
 import Preloader from "../../../components/Preloader";
-import {redirect} from "react-router-dom";
 
 
 function withAuth<T>(WrappedComponent: ComponentType<T>)  {

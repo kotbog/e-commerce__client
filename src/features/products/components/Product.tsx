@@ -3,10 +3,7 @@ import {FunctionComponent, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {IRootState} from "../../../data/types";
-import withAuth from "../../authentication/components/withAuth";
-import {dispatch} from "jest-circus/build/state";
 import {addCartItemAuth, addCartItemLocal} from "../../cart/context/CartActions";
-import {Id, Toast} from "react-toastify/dist/types";
 
 
 type ProductProps = {

@@ -2,13 +2,12 @@ import Product from "../features/products/components/Product";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getProductsAction} from "../features/products/context/ProductsActions";
-import {IRootState} from "../data/types";
-import {Product as ProductType} from "../data/types"
+import {IRootState, Product as ProductType} from "../data/types";
 import Sidebar from "../features/category/components/Sidebar";
 import Tab from "../components/Tab";
-import {state} from "sucrase/dist/types/parser/traverser/base";
-import {toast, ToastContainer, ToastOptions} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Home = () => {
 
     const dispatch = useDispatch();

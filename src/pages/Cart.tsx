@@ -7,6 +7,7 @@ import {getCartItems} from "../features/cart/context/CartActions";
 import Preloader from "../components/Preloader";
 import withAuth from "../features/authentication/components/withAuth";
 import {calcTotal} from "../features/authentication/services/calc_total";
+
 const Cart = () => {
     const dispatch = useDispatch();
     const loggedIn = useSelector<IRootState, boolean>(state => state.Login.loggedIn);
@@ -15,7 +16,7 @@ const Cart = () => {
 
     useEffect(() => {
         if(loggedIn && user) dispatch(getCartItems(user._id));
-    }, [dispatch]);
+    }, [dispatch, loggedIn, user]);
     const items =
         useSelector<IRootState,Array<CartItem>>
         ((state) => state.Cart.items);

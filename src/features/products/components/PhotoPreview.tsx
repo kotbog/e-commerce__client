@@ -1,5 +1,5 @@
 import preview from '../../../assets/preview.svg'
-import {FunctionComponent, MouseEventHandler, useState} from "react";
+import {FunctionComponent, useState} from "react";
 
 type PhotoPreviewProps = {
     images?: Array<string>
@@ -7,7 +7,7 @@ type PhotoPreviewProps = {
 
 const PhotoPreview : FunctionComponent<PhotoPreviewProps> = ({images}) => {
     const [currentImg, setCurrentImg] = useState<string>(images ? images[0] : preview);
-    const [imgList, setImgList] = useState(images?.slice(1))
+    const [imgList] = useState(images?.slice(1))
 
     function handleImgClick(src : string) {
         if (imgList) {

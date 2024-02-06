@@ -6,10 +6,12 @@ export function calcTotal(items : CartItems) {
     if(items && items[0]) {
         items.map(item => {
             if(item.price) total += item.price * Number(item.quantity);
-            else total += 0 * Number(item.quantity);
+            else total += 0;
+            return total;
         })
     } else {
         return 0;
+
     }
     return total;
 

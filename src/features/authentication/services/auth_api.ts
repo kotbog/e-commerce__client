@@ -1,6 +1,5 @@
 import instance from "../../../lib/axios";
 import {DeleteTokenResponse, LogInResponse, SignUpResponse, VerifyUserResponse} from "../data/types";
-import {data} from "browserslist";
 
 
 export const reqSignUp = async (email : string, password : string, first_name : string, last_name : string) => {

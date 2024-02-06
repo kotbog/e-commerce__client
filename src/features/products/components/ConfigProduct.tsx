@@ -1,6 +1,5 @@
 import Rating from "./Rating";
-import Button from "../../../components/Button";
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent} from "react";
 import ColorPicker from "./ColorPicker";
 
 

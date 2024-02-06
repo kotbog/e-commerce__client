@@ -1,7 +1,4 @@
-import customers from '../assets/about-customers.png'
-import {NavLink} from "react-router-dom";
 import PagePath from "../features/authentication/components/PagePath";
-import AchievementItem from "../components/AchievementItem";
 
 const Contacts = () => {
     return <div className={'container m-auto'}>
@@ -9,4 +6,5 @@ const Contacts = () => {
 
     </div>
 }
+
 export default Contacts;

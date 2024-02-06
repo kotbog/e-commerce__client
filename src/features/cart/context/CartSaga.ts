@@ -1,4 +1,4 @@
-import {all, call, put, spawn, take, takeEvery} from "@redux-saga/core/effects";
+import {all, call, put, spawn, takeEvery} from "@redux-saga/core/effects";
 import {
     ADD_ITEM_TO_CART_AUTH,
     ADD_ITEM_TO_CART_LOCAL,
@@ -11,10 +11,12 @@ import {
     addCartItemLocalAction,
     addCartItemResponse,
     CartItems,
-    GetCartItemsAction, removeCartItemAction, sendOrderAction, sendOrderDataResponse
+    GetCartItemsAction,
+    removeCartItemAction,
+    sendOrderAction,
+    sendOrderDataResponse
 } from "../data/types";
-import {addItemToCart, getCartItems, sendOrderItems} from "../services/cart_api";
-import {getCartItems as getCartAction} from '../context/CartActions'
+import {getCartItems} from "../services/cart_api";
 import {setCartErrorMessage, setCartItems, setLoadingCart} from "./CartActions";
 import {AxiosError} from "axios";
 import {Product} from "../../../data/types";
@@ -95,11 +97,7 @@ function* removeItemLocalWorker(action : removeCartItemAction) {
         let items : Array<Product & {quantity: number |string}> = localStorage.getItem('cart-items')
             ? JSON.parse(localStorage.getItem('cart-items') as string)
             : [];
-        const newItems = items.filter(item => {
-            if(item._id !== action.id) {
-                return item;
-            }
-        })
+        const newItems = items.filter(item => item._id !== action.id)
         yield put(setCartItems(newItems));
         localStorage.setItem('cart-items', JSON.stringify(newItems));
         yield put(setLoadingCart(false));

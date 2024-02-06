@@ -22,7 +22,7 @@ const Search = () => {
         if(debounceSearch) {
             dispatch(searchProducts(debounceSearch))
         }
-    }, [debounceSearch]);
+    }, [debounceSearch, dispatch]);
 
     return <>
         <label

@@ -1,6 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
 import {IRootState, Product as ProductType} from "../data/types";
-import {state} from "sucrase/dist/types/parser/traverser/base";
 import {useEffect} from "react";
 import {getProductsAction} from "../features/products/context/ProductsActions";
 import {useParams} from "react-router-dom";
@@ -11,10 +10,9 @@ const Category = () => {
     const products = useSelector<IRootState, Array<ProductType> | undefined>(state => state.Products.products);
     const dispatch = useDispatch();
     const {category} = useParams();
-    console.log(category);
     useEffect(() => {
         dispatch(getProductsAction({category: category}))
-    }, [dispatch]);
+    }, [category, dispatch]);
     return <div className={'container m-auto'}>
         <h2 className={'text-xl my-3'}>Products in category: <span className={'font-bold'}>{category}</span></h2>
         <div className={'flex w-full justify-around h-full'}>

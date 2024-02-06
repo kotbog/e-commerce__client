@@ -1,11 +1,9 @@
 import {all, call, put, spawn, takeEvery} from "@redux-saga/core/effects"
 import {LOG_IN, LOG_OUT, VERIFY_USER} from "../data/action_types";
-import {loggedInSuccess, logOutSuccess, setLoadingAuth, setLoginError, setVerifyUser, verifyUser} from "./LoginActions";
+import {loggedInSuccess, logOutSuccess, setLoadingAuth, setLoginError, setVerifyUser} from "./LoginActions";
 import {deleteToken, refreshToken, reqAuth, reqLogIn} from "../services/auth_api";
-import {DeleteTokenResponse, LogInAction, LogInResponse, RefreshTokenResponse, VerifyUserResponse} from "../data/types";
+import {DeleteTokenResponse, LogInAction, LogInResponse, VerifyUserResponse} from "../data/types";
 import {AxiosError} from "axios";
-
-
 
 
 function* loginWorker (action : LogInAction) {

@@ -1,5 +1,5 @@
 import {NavLink, useLocation} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import Search from "../features/search/components/Search";
 // import {useEffect} from "react";
 // import {useDispatch} from "react-redux";

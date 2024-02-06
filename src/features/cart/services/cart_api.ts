@@ -1,7 +1,6 @@
 import instance from "../../../lib/axios";
 import {addCartItemResponse, CartItems} from "../data/types";
 import {User} from "../../../data/types";
-import {response} from "express";
 
 
 export const getCartItems = async (id: string) => {
