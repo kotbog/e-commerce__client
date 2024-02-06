@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.1);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.2);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,0.4);
+    }
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
