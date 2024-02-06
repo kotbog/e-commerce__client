@@ -3,11 +3,8 @@ import {GET_CATEGORIES} from "../data/action_types";
 import {AxiosError} from "axios";
 import {setCartErrorMessage} from "../../cart/context/CartActions";
 import {setCategories, setErrorMessageCategory, setLoadingCategory} from "./CategoryActions";
-import instance from "../../../lib/axios";
 import {ResponseGetCategories} from "../data/types";
-import {Simulate} from "react-dom/test-utils";
 import {getCategoryApi} from "../services/category_api";
-
 
 
 function* getCategoryWorker() {

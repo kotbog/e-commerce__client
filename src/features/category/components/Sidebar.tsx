@@ -1,25 +1,24 @@
 import {NavLink} from "react-router-dom";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getCategories} from "../context/CategoryActions";
 import {IRootState} from "../../../data/types";
-import {state} from "sucrase/dist/types/parser/traverser/base";
 
-const categories = [
-    {
-        id: 1,
-        name: "Пластикові контейнери",
-        sub_cat: ['120 л', '240 л', '1100 л']
-    },
-    {
-        id: 2,
-        name: "Залізні контейнери"
-    },
-    {
-        id: 3,
-        name: "Підземні системи"
-    }
-];
+// const categories = [
+//     {
+//         id: 1,
+//         name: "Пластикові контейнери",
+//         sub_cat: ['120 л', '240 л', '1100 л']
+//     },
+//     {
+//         id: 2,
+//         name: "Залізні контейнери"
+//     },
+//     {
+//         id: 3,
+//         name: "Підземні системи"
+//     }
+// ];
 const Sidebar = () => {
 
     const categories = useSelector<IRootState, Array<{name:string, _id: string}>>(state => state.Category.categories);
