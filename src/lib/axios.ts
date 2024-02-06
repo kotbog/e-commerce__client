@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const instance = axios.create({
-    baseURL: "http://localhost:4000",
+    baseURL: "https://guiltless-synonymous-roadrunner.glitch.me",
     timeout: 3000,
     withCredentials: true
 });
